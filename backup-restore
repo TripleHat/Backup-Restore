@@ -1,0 +1,140 @@
+#!/bin/bash
+
+banner1() {
+clear
+echo "
+██████╗  █████╗  ██████╗██╗  ██╗██╗   ██╗██████╗ 
+██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██║   ██║██╔══██╗
+██████╔╝███████║██║     █████╔╝ ██║   ██║██████╔╝
+██╔══██╗██╔══██║██║     ██╔═██╗ ██║   ██║██╔═══╝ 
+██████╔╝██║  ██║╚██████╗██║  ██╗╚██████╔╝██║     
+╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝"     
+ echo -e "\e[1;90mCreated by TripleHat\e[0m"
+sleep 4
+}
+
+banner2() {
+echo "
+╔╗ ┌─┐┌─┐┬┌─┬ ┬┌─┐   ┬   ╦═╗┌─┐┌─┐┌┬┐┌─┐┬─┐┌─┐
+╠╩╗├─┤│  ├┴┐│ │├─┘  ┌┼─  ╠╦╝├┤ └─┐ │ │ │├┬┘├┤ 
+╚═╝┴ ┴└─┘┴ ┴└─┘┴    └┘   ╩╚═└─┘└─┘ ┴ └─┘┴└─└─┘
+"
+}
+
+me() {
+echo " "
+echo -e "\e[1;93m[~]\e[0m \e[1;94mTool crated by TripleHat\e[0m"
+echo -e "\e[1;93m[~]\e[0m \e[1;94mInstagram https://instagram.com/wh0ami_1\e[0m"
+echo -e "\e[1;93m[~]\e[0m \e[1;94mFlow Page https://flow.page/triplehat\e[0m"
+echo -e "\e[1;93m[~]\e[0m \e[1;94mGitHub https://github.com/TripleHat\e[0m"
+}
+
+banner3() {
+clear
+echo "
+██████╗ ███████╗███████╗████████╗ ██████╗ ██████╗ ███████╗
+██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██╔════╝
+██████╔╝█████╗  ███████╗   ██║   ██║   ██║██████╔╝█████╗  
+██╔══██╗██╔══╝  ╚════██║   ██║   ██║   ██║██╔══██╗██╔══╝  
+██║  ██║███████╗███████║   ██║   ╚██████╔╝██║  ██║███████╗
+╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝"
+  echo -e "\e[1;90mCreated by TripleHat\e[0m"
+sleep 4
+}
+
+Backup() {
+echo " "
+toilet -f future Backup starting
+sleep 5
+cd $HOME
+mkdir /sdcard/Termux
+cd $PREFIX/../../;tar -pczvf /sdcard/Termux/termux.backup.tar.gz files/;cd;
+toilet Backup Completed
+sleep 2
+clear
+echo -e "\e[1;91mNOTE, DO NOT REMOVE OR CHANGE NAME OF CREATED FOLDER IN YOUR INTERNAL STORAGE (folder name is Termux) OTHERWISE YOU WILL NEVER RESTORE YOUR DATA\e[0m"
+echo " "
+read -p "press enter to continue:"
+option
+}
+Restore() {
+echo " "
+toilet -f future Restoring Data
+sleep 5
+cd $HOME
+cd $PREFIX/../../;tar -xzvf /sdcard/Termux/termux.backup.tar.gz;cd;
+toilet -f future Data Restored
+echo " "
+read -p "press enter to continue:"
+option
+}
+
+option() {
+echo " "
+echo -e "\e[1;92m_____________________________________________\e[0m"
+echo " "
+echo -e "\e[1;90m[1]\e[0m \e[1;92mBackup\e[0m"
+echo " "
+echo -e "\e[1;90m[2]\e[0m \e[1;92mRestore\e[0m"
+echo " "
+echo -e "\e[1;90m[3]\e[0m \e[1;92mAbout Tool\e[0m"
+echo " "
+echo -e "\e[1;91m[00]\e[0m \e[1;91mExit\e[0m"
+echo " "
+echo -e "\e[1;92m_____________________________________________\e[0m"
+echo " "
+read -p "Input your Choice-:" opt 
+
+if [ $opt = '1' ] ; then
+banner1
+Backup
+sleep 2
+option
+elif [ $opt = '2' ] ; then
+banner3
+Restore
+sleep 2
+option
+elif [ $opt = '00' ] ; then
+clear
+echo "
+┌┬┐┬ ┬┌─┐┌┐┌┬┌─┌─┐  ┌─┐┌─┐┬─┐  ┬ ┬┌─┐┬┌┐┌┌─┐
+ │ ├─┤├─┤│││├┴┐└─┐  ├┤ │ │├┬┘  │ │└─┐│││││ ┬
+ ┴ ┴ ┴┴ ┴┘└┘┴ ┴└─┘  └  └─┘┴└─  └─┘└─┘┴┘└┘└─┘
+"
+elif [ $opt = '3' ] ; then
+$about
+
+else 
+clear 
+echo -e "\e[1;95m OPTION NOT AVAILABLE INPUT VALID OPTION\e[0m"
+option
+fi
+}
+
+info() {
+clear
+echo "
+ █████╗ ██████╗  ██████╗ ██╗   ██╗████████╗
+██╔══██╗██╔══██╗██╔═══██╗██║   ██║╚══██╔══╝
+███████║██████╔╝██║   ██║██║   ██║   ██║   
+██╔══██║██╔══██╗██║   ██║██║   ██║   ██║   
+██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║   
+╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝"
+me
+echo " "
+echo -e "\e[1;91m Backup and Restore\e[0m \e[1;95mTHIS TOOL IS FOR TERMUX USERS, THIS TOOL WILL HELP TO BACKUP ALL YOUR DATA INCLUDING TOOLS YOU INSTALLED, PACKAGES, AND EVERYTHING YOU KEEP IN TERMUX. BY DOING BACKUP YOU CANT LOSE YOUR DATA :)\e[0m"
+echo " "
+read -p "press enter to continue"
+clear
+banner2
+me
+option
+}
+
+about="info"
+
+clear
+banner2
+me
+option
