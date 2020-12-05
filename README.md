@@ -5,6 +5,7 @@ pkg install git -y && git clone https://github.com/TripleHat/Backup-Restore && c
 
 ## [📱] CONTACT ME
 
--[Flow page](https://flaw.page/triplehat)
+-[Flow page](https://flow.page/triplehat)
 -[Instagram](https://instagram.com/wh0ami_1)
+
 <img src="Screenshot_20201205-151514.png"></img>
