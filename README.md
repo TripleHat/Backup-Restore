@@ -4,7 +4,7 @@
 pkg install git -y && git clone https://github.com/TripleHat/Backup-Restore && chmod +x install.sh && ./install.sh && ./backup-restore.sh
 
 ## [📱] CONTACT ME
-```
-Flow page https://flaw.page/triplehat
-Instagram https://instagram.com/wh0ami_1
-```
+
+-[Flow page](https://flaw.page/triplehat)
+-[Instagram](https://instagram.com/wh0ami_1)
+<img src="Screenshot_20201205-151514.png"></img>
